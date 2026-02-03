@@ -8,19 +8,15 @@ int main(){
     }
     int count=0,repeat=0;
     for(int i=0;i<n;i++){
-        int duplicate=0;
+
         for(int j=0;j<i;j++){
             if(arr[i]==arr[j]){
-                duplicate=1;
                 repeat=arr[j];
+                count++;
             }
         }
-        if(duplicate==0){
-            count+=1;
-        }
-        
     }
-    if(count!=0){
+    if(count==0){
         printf("-1");
         
     }else{
