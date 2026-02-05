@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-    int r,c,count=0,count1=0;
+    int r,c,count=0;
     scanf("%d %d",&r,&c);
     int a[r][c];
     for(int i=0;i<r;i++){ // row
@@ -10,20 +10,21 @@ int main(){
     }
 
     for(int i=0;i<r;i++){
-        count=0;
         for(int j=0;j<c;j++){
-            for(int k=2;k<c;k++){
-                if(a[i][j]%k==0 ){
-                    count++;
+            int n=a[i][j];
+            int prime=1;
+            for(int k=2;k<n;k++){
+                if(n%k==0 ){
+                    prime=0;
+                    break;
                 }
-                if(count==1){
-                    count1++;
-        
-                }
+            }
+            if(prime!=0){
+                count++;
             }
         }
     }
-    printf("%d",count1);
+    printf("%d",count);
 
 
 
