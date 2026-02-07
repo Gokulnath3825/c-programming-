@@ -10,14 +10,17 @@ int main(){
     }
     int count1=0;
     for(int i=0;i<r;i++){
-        int count=0;
         for(int j=0;j<c;j++){
-            if(a[i][j]>a[i-1][j-1] && a[i][j]<a[i+1][j+1]){
-                count++;
-                break;
+            int count=0;
+            for(int k=0;k<j;k++){
+                if(a[i][j]>a[i][k+1]){
+                    count=1;
+                }
+            }
+            if(count==1){
+                count1++;
             }
         }
-        count1+=count;
     }
     printf("%d",count1);
     return 0;
