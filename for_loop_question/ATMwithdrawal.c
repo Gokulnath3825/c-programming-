@@ -8,7 +8,7 @@ int main(){
         scanf("%d",&amount);
         sum+=amount;
     }
-    if(sum<10000){
+    if(sum<=10000){
         printf("Approved");
     }
     else{
